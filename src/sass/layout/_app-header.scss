@@ -1,0 +1,13 @@
+.app-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.app-header--secondary {
+    @extend .app-header;
+    padding-top: 0;
+    background-color: rgba($primary, .8);
+}

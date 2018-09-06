@@ -1,0 +1,370 @@
+#course-open {
+    margin-bottom: 140px;
+    padding-top: 100px;
+
+
+    .section-title {
+        margin-bottom: 150px;
+    }
+
+    .course-open-description {
+        margin-bottom: 30px;
+        padding: 40px 0;
+        padding-left: 100px;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            padding-left: 5px;
+        }        
+
+        &__text {
+            margin-right: 100px;
+            font-size: 36px;
+            color: #f9c037;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__text {
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                font-size: 24px;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -1000px;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0.27) 73%,rgba(125,185,232,0) 100%);
+            z-index: -12;
+        }
+    }
+}
+
+.course-open-item {
+    margin-bottom: 140px;
+    padding: 60px 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 22px 5px rgba(0, 0, 0, 0.1);     
+    overflow: hidden;
+
+    &-nav {
+
+        &-list {
+            background: $primary;
+
+            &__item {
+                padding: 25px 60px;
+                font-family: 'ProximaNova', sans-serif;
+                font-size: 36px;
+                color: $secondary;
+                cursor: pointer;
+                transition: .5s;
+                user-select: none;
+
+                @media (max-width: map_get($grid-breakpoints, md)) {
+                    padding: 15px 30px;
+                    font-size: 24px;
+                }
+
+                &.active {
+                    background-color: #fff;
+                    color: $dark;
+
+                    &:hover {
+                        color: $dark;
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 60px;
+                    right: 100%;
+                    bottom: 25px;
+                    height: 1px;
+                    background-color: #fff;
+                    transition: .5s;
+
+                    @media (max-width: map_get($grid-breakpoints, md)) {
+                        left: 30px;
+                        bottom: 15px;
+                    }
+                }
+
+                &:hover {
+                    color: #fff;
+
+                    &::before {
+                        right: 60px;
+
+                        @media (max-width: map_get($grid-breakpoints, md)) {
+                            right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-content {
+        margin-top: 30px;
+        padding: 0 60px;
+        display: none;
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            padding: 0 15px;
+        }
+
+        &.active {
+            display: block;
+        }
+
+        &-form {
+            padding-left: 50px;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                padding-left: 0;
+            }
+
+            .form-modal {
+                top: -10px;
+                left: -60px;
+                bottom: -40px;
+                width: 70px;
+                background: rgba($secondary, .6);
+                z-index: 999;
+                transition: .5s;
+
+                @media (max-width: map_get($grid-breakpoints, sm)) {
+                    display: none;
+                }
+
+                &.active {
+                    animation: activeModal 5s forwards;
+                }
+
+                &-content {
+                    width: 300px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -800px;
+                    transition: 1s;
+
+                    &.active {
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                @keyframes activeModal{
+                    0% {
+                        width: 0;
+                    }
+                  
+                    50% {
+                        width: 110%;
+                    }
+
+                    75% {
+                        width: 70px;
+                    }
+                    100% {
+                        width: 70px;
+                    }
+                }
+            }
+
+            .btn-bg-icon {
+                font-family: 'ProximaNova', sans-serif;
+                border: 2px solid #2f3743 !important;
+                background: transparent;
+                color: $dark;
+
+                .btn-icon {
+                    background-color: #2f3743;
+
+                    &::before {
+                        background-image: url('../images/icon/brain-icon--white.png');
+                    }
+                }
+            }
+        }
+
+        &__title {
+            padding: 40px 60px 40px 80px;
+            font-size: 24px;
+            z-index: 5;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                padding: 20px 15px 20px 50px;
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 50px;
+                height: 1px;
+                background-color: $dark;
+
+                @media (max-width: map_get($grid-breakpoints, sm)) {
+                    width: 30px;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -60px;
+                right: 0;
+                bottom: 0;
+                background-color: #ebebeb;
+                z-index: -1;
+            }
+        }
+
+        &-list {
+            counter-reset: li; 
+            padding: 0 60px 0 0;
+
+            @media (max-width: map_get($grid-breakpoints, md)) {
+                padding-right: 15px;
+            }
+
+            &-item {
+                margin-bottom: 10px;
+
+                &-description {
+                    counter-reset: li;
+                    margin-left: 50px; 
+                    padding: 20px 0;
+
+                    @media (max-width: map_get($grid-breakpoints, md)) {
+                        margin-left: 15px;
+                    }
+    
+                    &__item {
+                        font-size: 18px;
+                        color: #3c3c3c;
+
+                        @media (max-width: map_get($grid-breakpoints, md)) {
+                            font-size: 16px;
+                            max-width: 180px;
+                        }
+    
+                        &::before {
+                            counter-increment: li; 
+                            content: counters(li,".") ". "; 
+                        }
+                    }
+                }
+
+                &__title {
+                    width: 100%;
+                    max-width: 210px;
+                    font-family: 'ProximaNova', sans-serif;
+                    font-size: 24px;
+                    background-color: #ebebeb;
+                    padding: 20px 0;
+                    text-align: center;
+
+                    @media (max-width: map_get($grid-breakpoints, md)) {
+                        max-width: 120px;
+                        font-size: 20px;
+                    }
+                }
+
+                &::before {
+                    counter-increment: li; 
+                    content: ''; 
+                }
+            }
+        }
+
+        &-teach {
+            padding-right: 70px;
+
+            @media (max-width: map_get($grid-breakpoints, md)) {
+                padding-right: 15px;
+            }
+
+            &__img {
+                width: 100%;
+                max-width: 450px;
+                height: 400px;
+                @extend %img;
+            }
+
+            &-description {
+                margin-top: 40px;
+                margin-left: 70px;
+
+                @media (max-width: map_get($grid-breakpoints, md)) {
+                    margin-left: 15px;
+                    margin-top: 20px;
+                }
+    
+
+                &__name {
+                    left: -100px;
+                    margin-bottom: 50px;
+                    background-color: #ebebeb;
+                    padding: 40px 100px;
+
+                    @media (max-width: map_get($grid-breakpoints, md)) {
+                       left: 0;
+                       padding: 20px 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#secondary-products {
+    padding-bottom: 150px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -200px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ceeeff;
+        z-index: -999;
+    }
+
+    .secondary-products-slider {
+
+        .flickity-page-dots {
+            bottom: -50px;
+    
+            li {
+                background: $primary;
+            }
+        }
+    
+        &-item {
+            padding: 0 15px;
+            width: 100%;
+
+            @media (min-width: map_get($grid-breakpoints, sm)) {
+                width: 50%;
+            }
+    
+            @media (min-width: map_get($grid-breakpoints, lg)) {
+                width: 33.333333%;
+            }
+        }
+    }
+}
+

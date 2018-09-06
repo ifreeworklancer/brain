@@ -1,0 +1,230 @@
+.app-header { 
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: -60px;
+        right: 0;
+        padding: 0 15px;
+        width: 100%;
+        max-width: 290px;
+        height: 100vh;
+        max-height: 1000px;
+        background: rgba(#1a5f7d, .8);
+        z-index: 9999;
+        transition: linear;
+    
+        &.active {
+            position: fixed;
+            top: 0;
+            right: 14%;
+    
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                right: 0;
+                max-width: 100%;
+            }
+        }
+    }
+    
+    .menu-nav {
+    
+        &-list {
+    
+            &-item {
+                margin-bottom: 30px;
+    
+                &__link {
+                    position: relative;
+                    top: 0;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    color: #fff;
+                    transition: top .5s;
+    
+                    @media (max-width: map_get($grid-breakpoints, sm)) {
+                        font-size: 18px;
+                    }
+    
+                    &:hover {
+                        top: -5px;
+                        color: #fff;
+    
+                        &::before {
+                            right: 0;
+                        }
+                    }
+    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 100%;
+                        height: 1px;
+                        background-color: #fff;
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+    
+        .btn {
+            position: relative;
+            padding: 20px 60px 20px 120px;
+    
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                padding: 20px 20px 20px 80px;
+            }
+        }
+    }
+    
+    .burger-menu {
+        opacity: 0;
+        position: relative;
+        top: 0;
+        right: 14%;
+        padding: 39px 30px;
+        width: 100px;
+        height: 100px;
+        background-color: #5d9dba;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        z-index: 99999;
+    
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            right: 0;
+        }
+    
+        &.is-fixed {
+            position: fixed;
+            opacity: .9;
+        }
+    
+        &.active {
+            animation: smallbig 0.6s forwards;
+    
+            .line {
+                transition-delay: 0.2s;
+    
+                &--top {
+                    transform: translateY(10px) translateX(0) rotate(45deg);
+                }
+    
+                &--middle {
+                    opacity: 0;
+                }
+    
+                &--bottom {
+                    width: 40px;
+                    transform: translateY(-10px) translateX(0) rotate(-45deg);
+                }
+                
+            }
+    
+            &:hover {
+                
+                .line--top {
+                    opacity: 1;
+                    transform: translateY(10px) translateX(0) rotate(45deg) scale(1.3);
+                }
+        
+                .line--middle {
+                    opacity: 0;
+                }
+        
+                .line--bottom {
+                    opacity: 1;
+                    transform: translateY(-10px) translateX(0) rotate(-45deg) scale(1.4);
+                }
+            } 
+        }
+    
+        @keyframes smallbig{
+            0%{
+              transform: scale(1);
+            }
+          
+            50%{
+              transform: scale(0);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+      
+        .line{
+            width: 40px;
+            height: 2px;
+            background-color: #fff;
+            margin: 8px auto;
+            transition: all 0.3s ease-in-out;
+    
+            &--top {
+                margin-top: 0;
+            }
+            
+            &--bottom {
+                width: 32px;
+                margin-left: 0;
+                margin-right: auto;
+            }
+        }
+    
+        
+        &:hover {
+    
+            .line--top {           
+                transform: translateY(10px) translateX(0) rotate(45deg);
+            }
+    
+            .line--middle {
+                opacity: 0;
+            }
+    
+            .line--bottom {
+                transform: translateY(-10px) translateX(0) rotate(-45deg);
+                width: 40px;
+            }
+        }
+      
+    }  
+}
+
+.app-header--secondary {
+
+    .menu--secondary {
+        @extend .menu;
+        z-index: 99998;
+    
+        &.active {
+            display: flex;
+            top: 0;
+            right: 0;
+    
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                max-width: 100%;
+            }
+        }
+
+        .menu-nav--secondary {
+            @extend .menu-nav;
+        }
+    }    
+
+    .burger-menu--secondary {
+        @extend .burger-menu;
+        right: 0;
+        opacity: 1;
+    
+        &.active {
+            background-color: transparent;
+    
+            .line {
+                background-color: $secondary;
+            }
+        }
+      
+    }  
+
+}

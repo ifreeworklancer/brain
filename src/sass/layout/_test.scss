@@ -1,0 +1,35 @@
+#test {
+
+    .test-img {
+        padding-top: 395px;
+        @extend %img;
+    }
+
+    .test-item {
+        left: 45%;
+        top: 30%;
+        width: 100%;
+        max-width: 260px;
+        z-index: 10;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            left: 20%;
+        }
+
+        &__title {
+            max-width: 140px;
+        }
+
+        &__text {
+            font-size: 18px;
+        }
+    }
+
+    .decoration {
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: #e1e1e1;
+    }
+}

@@ -1,0 +1,51 @@
+#form-records {
+    max-width: 300px;
+
+    .form-group {
+        font-family: 'ProximaNova', sans-serif;
+        margin-bottom: 30px;
+
+        &.in-focus {
+
+            .label-placeholder {
+                font-size: 16px;
+                bottom: 70%;
+            }
+        }
+
+        .label-placeholder {
+            font-size: 24px;
+            z-index: 99;
+            color: #2d2d2d;
+            bottom: 0;
+            transition: .5s;
+        }
+
+        .form-control {
+            border: none;
+            padding: 10px 0;
+            font-size: 24px;
+            color: $dark;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #2d2d2d;
+            z-index: 10;
+            transition: .5s;
+        }
+
+        &:hover {
+
+            &::before {
+                width: 100%;
+                background-color: $primary;
+            }
+        }
+    }    
+}

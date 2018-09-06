@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="dist/app.css">
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+        <symbol id="arrow-right-icon" viewBox="0 0 450 450">
+            <path d="M490.786,212.678c-1.718-1.713-3.901-2.568-6.57-2.568H127.907v-63.953c0-3.809-1.812-6.567-5.424-8.28   c-3.621-1.521-6.952-0.949-9.995,1.713L2.853,240.658C0.95,242.564,0,244.848,0,247.511c0,2.474,0.95,4.665,2.853,6.567   l109.636,99.928c3.046,2.474,6.377,2.956,9.995,1.427c3.612-1.52,5.424-4.278,5.424-8.278v-63.953h356.315   c2.663,0,4.854-0.859,6.564-2.567c1.711-1.711,2.566-3.897,2.566-6.563v-54.821C493.356,216.586,492.497,214.393,490.786,212.678z"
+            />
+        </symbol>
+
+        <symbol id="arrow-left-icon" viewBox="0 0 450 450">
+            <path d="M490.498,239.278l-109.632-99.929c-3.046-2.474-6.376-2.95-9.993-1.427c-3.613,1.525-5.427,4.283-5.427,8.282v63.954H9.136   c-2.666,0-4.856,0.855-6.567,2.568C0.859,214.438,0,216.628,0,219.292v54.816c0,2.663,0.855,4.853,2.568,6.563   c1.715,1.712,3.905,2.567,6.567,2.567h356.313v63.953c0,3.812,1.817,6.57,5.428,8.278c3.62,1.529,6.95,0.951,9.996-1.708   l109.632-101.077c1.903-1.902,2.852-4.182,2.852-6.849C493.356,243.367,492.401,241.181,490.498,239.278z"
+            />
+        </symbol>
+
+        <symbol id="phone-icon" viewBox="0 0 512 512">
+            <path d="M368,0H144c-26.4,0-48,21.6-48,48v416c0,26.4,21.6,48,48,48h224c26.4,0,48-21.6,48-48V48C416,21.6,394.4,0,368,0z M192,24 
+                    h128v16H192V24z M256,480c-17.673,0-32-14.327-32-32s14.327-32,32-32s32,14.327,32,32S273.673,480,256,480z M384,384H128V64h256 
+                    V384z" fill="#8f8f8f" />
+        </symbol>
+
+        <symbol id="facebook-icon" viewBox="0 0 448 512">
+            <path fill="#bce3ff" d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"></path>
+        </symbol>
+
+        <symbol id="instagram-icon" viewBox="0 0 448 512">
+            <path fill="#bce3ff" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+        </symbol>
+
+        <symbol id="youtube-icon" viewBox="0 0 448 512">
+            <path fill="#bce3ff" d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"></path>
+        </symbol>
+
+        <symbol id="telegram-icon" viewBox="0 0 496 512">
+            <path fill="#bce3ff" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path>
+        </symbol>
+
+        <symbol id="robot-icon" viewBox="0 0 430.117 430.118">
+            <path d="M251.808,171.704c0-8.623,6.926-15.609,15.485-15.609c8.536,0,15.467,6.986,15.467,15.609
+		c0,8.62-6.931,15.611-15.467,15.611C258.733,187.311,251.808,180.32,251.808,171.704z M203.641,38.734h-0.128v21.396h19.639V39.36
+		c6.758-3.426,11.443-10.398,11.443-18.547C234.595,9.315,225.363,0,213.96,0c-11.399,0-20.641,9.315-20.641,20.813
+		C193.315,28.506,197.492,35.136,203.641,38.734z M160.668,187.311c8.539,0,15.469-6.991,15.469-15.614
+		c0-8.62-6.931-15.607-15.469-15.607c-8.559,0-15.485,6.987-15.485,15.607C145.183,180.32,152.109,187.311,160.668,187.311z
+		 M213.96,430.118c23.296,0,43.098-14.943,50.616-35.843H163.34C170.861,415.174,190.657,430.118,213.96,430.118z M52.57,366.702
+		c0-8.261,4.807-15.336,11.724-18.696v-88.497c0-17.455,13.476-31.708,30.513-32.838v-42.825c0,0,4.145-78.05,68.534-102.328
+		c19.126-7.208,36.588-10.123,51.718-10.671c15.141,0.548,32.604,3.463,51.711,10.667c64.401,24.278,68.551,102.328,68.551,102.328
+		v42.821c17.025,1.134,30.504,15.392,30.504,32.842v88.502c6.916,3.36,11.724,10.44,11.724,18.696
+		c0,11.49-9.241,20.806-20.638,20.806c-11.397,0-20.638-9.315-20.638-20.806c0-8.261,4.812-15.336,11.714-18.696v-59.16
+		c-3.836,1.979-8.14,3.174-12.662,3.482v20.562c0.117,1.662,0.252,3.31,0.252,5.013c0,1.802-0.116,3.584-0.252,5.367v0.476h-0.022
+		c-2.749,34.257-29.328,61.699-63.016,65.442l0.028,0.467h-57.256h-57.263l0.038-0.467c-33.687-3.743-60.259-31.186-63.008-65.442
+		h-0.019v-0.476c-0.128-1.783-0.252-3.565-0.252-5.367c0-1.699,0.128-3.351,0.252-5.013v-20.559
+		c-4.539-0.312-8.842-1.498-12.678-3.486v59.17c6.914,3.36,11.724,10.436,11.724,18.687c0,11.5-9.239,20.811-20.643,20.811
+		C61.817,387.512,52.57,378.202,52.57,366.702z M249.502,257.856c0-5.525-4.443-10.016-9.932-10.016
+		c-5.498,0-9.941,4.485-9.941,10.016c0,5.535,4.443,10.025,9.941,10.025C245.059,267.881,249.502,263.391,249.502,257.856z
+		 M273.957,257.856c0-5.525-4.443-10.016-9.932-10.016s-9.94,4.485-9.94,10.016c0,5.535,4.452,10.025,9.94,10.025
+		S273.957,263.391,273.957,257.856z M298.422,257.856c0-5.525-4.443-10.016-9.932-10.016c-5.498,0-9.94,4.485-9.94,10.016
+		c0,5.535,4.442,10.025,9.94,10.025C293.979,267.881,298.422,263.391,298.422,257.856z M131.425,174.595
+		c0,26.591,20.64,28.33,20.64,28.33c7.183,2.289,22.362,1.153,29.23,0c6.321-1.076,29.515-3.097,33.208-3.426
+		c0.141,0.014,0.364,0.038,0.551,0.046c0.196-0.009,0.416-0.032,0.546-0.046c3.697,0.324,26.883,2.35,33.211,3.426
+		c6.88,1.153,22.048,2.289,29.235,0c0,0,20.633-1.734,20.633-28.33c0,0,0-29.486-20.633-47.408
+		c-20.013-17.382-50.092-21.153-61.896-21.377v-0.019c-0.168,0-0.373,0.014-0.551,0.014c-0.172,0-0.387-0.014-0.546-0.014
+		c-0.168,0-0.378,0.014-0.551,0.014c-0.175,0-0.385-0.014-0.548-0.014v0.019c-11.792,0.224-41.88,3.995-61.89,21.377
+		C131.425,145.109,131.425,174.595,131.425,174.595z" />
+        </symbol>
+
+    </svg>
+
+    <!-- New header -->
+    <header id="app-header" class="app-header--secondary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-5 col-sm-auto">
+                    <a href="index.html" class="logo">
+                        <img src="images/icon/logo-icon.png" alt="Brain Academy Logo">
+                    </a>
+                </div>
+                <div class="col-7 col-sm d-flex justify-content-end align-items-center">
+                    <div class="burger-menu--secondary">
+                        <div class="line line--top"></div>
+                        <div class="line line--middle"></div>
+                        <div class="line line--bottom"></div>
+                    </div>
+                    <div class="menu--secondary animated px-2 justify-content-center align-items-center">
+                        <nav class="menu-nav--secondary">
+                            <ul class="menu-nav-list list-unstyled text-center mb-5">
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">главная</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">курсы</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">курсы для школьников</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">пройти тест</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">блог</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">про академию</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">контакты</a>
+                                </li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary btn-bg-icon d-block">
+                                <div class="btn-icon"></div>выбрать курс</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Blog -->
+        <section id="blog-page">
+            <div class="container">
+                <div class="page-banner position-absolute" style="background-image: url('images/bg/blog-page-banner.jpg');"></div>
+                <ul class="breadcrumbs-list list-unstyled d-inline-flex position-relative">
+                    <li class="breadcrumbs-list-item position-relative">
+                        <a href="#" class="breadcrumbs-list-item__link text-uppercase position-relative">главная</a>
+                    </li>
+                    <li class="breadcrumbs-list-item position-relative ml-1">
+                        <a href="#" class="breadcrumbs-list-item__link text-uppercase position-relative">блог</a>
+                    </li>
+                </ul>
+                <h2 class="section-title text-white text-uppercase mb-5">Блог</h2>
+                <div class="course-btn">
+                    <a href="#" class="btn btn-bg-icon">
+                        <div class="btn-icon"></div>выбрать курс</a>
+                </div>
+                <div class="blog-page-content position-relative">
+
+                    <div class="blog-page-content-item">
+                        <h2 class="blog-page-content-item-title"><span class="blog-page-content-item-title__text text-uppercase">ПРОСТЫМИ
+                                СЛОВАМИ ОБ IT</span></h2>
+                        <div class="blog-page-content-item-description d-flex flex-column flex-sm-row align-items-center">
+                            <div class="blog-page-content-item-description__img" style="background-image: url('images/content/blog/blog-item-1.jpg');"></div>
+                            <div class="blog-page-content-item-description-content">
+                                <p class="blog-page-content-item-description-content__text ml-2">Сегодня система образования
+                                    переживает не лучшие времена.Наука и технологии развиваются со скоростью в несколько
+                                    раз быстрее, чем “тяжелая машина обучения” может себе позволить...</p>
+                                <div class="blog-page-content-item-description-content-info ml-2">
+                                    <div class="blog-page-content-item-description-info-content__item">30 августа 2018</div>
+                                    <div class="blog-page-content-item-description-info-content__item">Автор <span class="font-weight-bold">Brain
+                                            Academy
+                                        </span></div>
+                                    <div class="blog-page-content-item-description-info-content__item">Категория <span class="font-weight-bold">Блог</span></div>
+                                </div>
+                                <a href="#" class="btn btn-outline-dark ml-2 mt-4">подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-page-content-item">
+                        <h2 class="blog-page-content-item-title"><span class="blog-page-content-item-title__text text-uppercase">Кто
+                                такой Full-stack Developer?</span></h2>
+                        <div class="blog-page-content-item-description d-flex flex-column flex-sm-row align-items-center">
+                            <div class="blog-page-content-item-description__img" style="background-image: url('images/content/blog/blog-item-2.jpg');"></div>
+                            <div class="blog-page-content-item-description-content">
+                                <p class="blog-page-content-item-description-content__text ml-2">Разработка продукта – дело
+                                    хлопотное, масштабное и ресурсозатратное. Поэтому перед тем, как начинать работу над
+                                    проектом, необходимо убедиться в том, что Вы точно понимаете, что Вы будете …
+                                </p>
+                                <div class="blog-page-content-item-description-content-info ml-2">
+                                    <div class="blog-page-content-item-description-info-content__item">30 августа 2018</div>
+                                    <div class="blog-page-content-item-description-info-content__item">Автор <span class="font-weight-bold">Brain
+                                            Academy
+                                        </span></div>
+                                    <div class="blog-page-content-item-description-info-content__item">Категория <span class="font-weight-bold">Блог</span></div>
+                                </div>
+                                <a href="#" class="btn btn-outline-dark ml-2 mt-4">подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="blog-page-content-item">
+                        <h2 class="blog-page-content-item-title"><span class="blog-page-content-item-title__text text-uppercase">Кто
+                                же должен программировать?</span></h2>
+                        <div class="blog-page-content-item-description d-flex flex-column flex-sm-row align-items-center">
+                            <div class="blog-page-content-item-description__img" style="background-image: url('images/content/blog/blog-item-3.jpg');"></div>
+                            <div class="blog-page-content-item-description-content">
+                                <p class="blog-page-content-item-description-content__text ml-2">Сегодня система образования
+                                    переживает не лучшие времена.Наука и технологии развиваются со скоростью в несколько
+                                    раз быстрее, чем “тяжелая машина обучения” может себе позволить...
+                                </p>
+                                <div class="blog-page-content-item-description-content-info ml-2">
+                                    <div class="blog-page-content-item-description-info-content__item">30 августа 2018</div>
+                                    <div class="blog-page-content-item-description-info-content__item">Автор <span class="font-weight-bold">Brain
+                                            Academy
+                                        </span></div>
+                                    <div class="blog-page-content-item-description-info-content__item">Категория <span class="font-weight-bold">Блог</span></div>
+                                </div>
+                                <a href="#" class="btn btn-outline-dark ml-2 mt-4">подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagination d-flex justify-content-center">
+                        <a href="#" class="pagination-item">1</a>
+                        <a href="#" class="pagination-item active">2</a>
+                        <a href="#" class="pagination-item">3</a>
+                        <a href="#" class="pagination-item">...</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="app-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="footer-item">
+                        <a href="#" class="logo mb-5">
+                            <img src="images/icon/logo-icon.png" alt="Brain Academy Logo">
+                        </a>
+                        <div class="footer-item__address text-uppercase mb-4 text-white">ЗАПОРОЖЬЕ, УЛ. ВОЛГОГРАДСКАЯ 26А,
+                            ОФ. 213</div>
+                        <ul class="phone-list list-unstyled p-0">
+                            <li class="phone-list-item">
+                                <a href="#">
+                                    <svg width="15" height="20" class="mr-3">
+                                        <use xlink:href="#phone-icon"></use>
+                                    </svg>
+                                    <a href="#" class="phone-list-item__link">(099) 200-3373</a>
+                            </li>
+                            <li class="phone-list-item">
+                                <svg width="15" height="20" class="mr-3">
+                                    <use xlink:href="#phone-icon"></use>
+                                </svg>
+                                <a href="#" class="phone-list-item__link">(099) 200-3373</a>
+                            </li>
+                        </ul>
+
+                        <ul class="social-list list-unstyled d-flex mb-4">
+                            <li class="social-list-item mr-3">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#facebook-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-list-item mr-3">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#instagram-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-list-item mr-3">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#youtube-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-list-item">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#telegram-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="footer-item-copyr">
+                            Дизайн и разработка
+                            <span class="font-weight-bold">Impression Bureau</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <a href="#" class="footer-img position-absolute" style="background-image: url('images/content/footer/footer-item.jpg');"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="dist/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+/* Gotham Pro */
+
+@font-face {
+	font-family: 'GothamPro';
+	src: url('GothamPro-Bold.eot');
+	src: local('Gotham Pro Bold'), local('GothamPro-Bold'),
+		url('GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+		url('GothamPro-Bold.woff') format('woff'),
+		url('GothamPro-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamPro';
+	src: url('GothamPro-Light.eot');
+	src: local('Gotham Pro Light'), local('GothamPro-Light'),
+		url('GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+		url('GothamPro-Light.woff') format('woff'),
+		url('GothamPro-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GothamPro';
+	src: url('GothamPro.eot');
+	src: local('Gotham Pro'), local('GothamPro'),
+		url('GothamPro.eot?#iefix') format('embedded-opentype'),
+		url('GothamPro.woff') format('woff'),
+		url('GothamPro.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Proxi */
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url('ProximaNovaExCn-Light.eot');
+	src: url('ProximaNovaExCn-Light.woff2') format('woff2'),
+		 url('ProximaNovaExCn-Light.woff') format('woff'),
+		 url('ProximaNovaExCn-Light.ttf') format('truetype'),
+		 url('ProximaNovaExCn-Light.svg#ProximaNovaExCn-Light') format('svg'),
+		 url('ProximaNovaExCn-Light.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+  
+@font-face {
+	font-family: 'ProximaNova-Bold';
+	src: url('ProximaNovaExCn-Bold.eot');
+	src: url('ProximaNovaExCn-Bold.woff2') format('woff2'),
+		 url('ProximaNovaExCn-Bold.woff') format('woff'),
+		 url('ProximaNovaExCn-Bold.ttf') format('truetype'),
+		 url('ProximaNovaExCn-Bold.svg#ProximaNovaExCn-Bold') format('svg'),
+		 url('ProximaNovaExCn-Bold.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+  
+  
+  
+  
+  

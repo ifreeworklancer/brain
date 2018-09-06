@@ -1,0 +1,22 @@
+.pagination {
+    text-align: center;
+
+    &-item {
+        padding: 15px;
+        font-size: 14px;
+        color: #212b2c;
+        background: #e8f5fb;
+        font-family: 'GothamPro', Arial, Helvetica, sans-serif;
+        border-bottom: 1px solid transparent;
+        transition: .5s;
+
+        &.active {
+            color: #fff;
+            background-color: $primary;
+        }
+
+        &:hover {
+            border-color: $primary;
+        }
+    }
+}

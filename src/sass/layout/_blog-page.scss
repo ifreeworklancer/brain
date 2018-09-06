@@ -1,0 +1,90 @@
+#blog-page {
+    padding-top: 100px;
+
+    .course-btn {
+        margin-top: 170px;
+        margin-bottom: 60px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 0;
+        bottom: -180px;
+        height: 600px;
+        background-color: #e8f5fb;
+    }
+}
+
+.blog-page-content {
+    padding-bottom: 90px;
+    background-color: #fff;
+    box-shadow: 0px 0px 22px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 180px;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        bottom: -25px;
+        width: 100px;
+        height: 100px;
+        background-color: #cccccc;
+        z-index: -999;
+    }
+
+    &-item {
+        margin-bottom: 90px;
+    
+        &-title {
+            background-color: $secondary;
+            padding: 30px 0;
+            padding-left: 20px;
+            overflow: hidden;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                padding: 15px 0;
+                padding-left: 10px;
+            }
+
+            &__text {
+                background-color: #fff;
+                padding: 30px 50px;
+
+                @media (max-width: map_get($grid-breakpoints, sm)) {
+                    padding: 15px 20px;
+                }
+            }
+        }
+
+        &-description {
+
+            &__img {
+                @extend %img;
+                width: 100%;
+                max-width: 520px;
+                padding-top: 400px;
+
+                @media (max-width: map_get($grid-breakpoints, sm)) {
+                    padding-top: 200px;
+                }
+            }
+
+            &-content {
+                margin-left: 50px;
+                max-width: 450px;
+
+                @media (max-width: map_get($grid-breakpoints, sm)) {
+                    margin: 20px 15px 0;
+                }
+
+                &__text {
+                    font-size: 18px;
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #cccccc;
+                }
+            }
+        }
+    }
+}

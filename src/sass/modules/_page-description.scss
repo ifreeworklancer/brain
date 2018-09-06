@@ -1,0 +1,19 @@
+.page-banner {
+    @extend %img;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 625px;
+    z-index: -99;
+}
+
+.page-description {
+    color: #fff;
+    max-width: 400px;
+
+    &__title {
+        text-transform: uppercase;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #fff;
+    }
+}

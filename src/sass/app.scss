@@ -1,0 +1,37 @@
+@import "config/variables";
+@import "config/placeholders";
+
+@import "~bootstrap/scss/bootstrap";
+@import "~animate.css/animate.min.css";
+
+@import "base/body";
+@import "base/btn";
+@import "base/section";
+
+@import "modules/menu";
+@import "modules/page-description";
+@import "modules/breadcrumbs";
+@import "modules/more-info";
+@import "modules/forms";
+@import "modules/paginations";
+@import "modules/slider";
+
+@import "layout/app-header";
+@import "layout/header-banner";
+@import "layout/course";
+@import "layout/test";
+@import "layout/events";
+@import "layout/blog";
+@import "layout/reviews";
+@import "layout/app-footer";
+
+@import "layout/course-page";
+@import "layout/course-open";
+@import "layout/blog-page";
+@import "layout/blog-open";
+@import "layout/about-page";
+@import "layout/contacts";
+@import "layout/thanks-page";
+
+
+

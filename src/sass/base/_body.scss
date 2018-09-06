@@ -1,0 +1,30 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    font-weight: 300;
+}
+
+
+h2 {
+
+  @media (max-width: map_get($grid-breakpoints, sm)) {
+    font-size: 22px;
+  }
+}
+
+h3 {
+
+  @media (max-width: map_get($grid-breakpoints, sm)) {
+    font-size: 20px;
+  }
+}
+
+a {
+  transition: 0.35s;
+  font-family: 'ProximaNova', sans-serif;
+}
+
+img {
+  width: 100%;
+}

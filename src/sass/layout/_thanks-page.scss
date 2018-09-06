@@ -1,0 +1,36 @@
+#thanks-page {
+    padding-top: 100px;
+    height: 100vh;
+    min-height: 600px;
+    @extend %img;
+}
+
+.thanks-page-footer {
+    left: 0;
+    right: 0;
+    bottom: 40px;
+}
+
+.thanks-page-item {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+
+    &-text-bg {
+        left: 0;
+        right: 0;
+        font-size: 350px;
+        z-index: -999;
+        font-family: 'ProximaNova', sans-serif;
+        opacity: .07;
+        user-select: none;
+    }
+    &__title {
+        font-size: 48px;
+    }
+    &__text {
+        font-size: 24px;
+    }
+}

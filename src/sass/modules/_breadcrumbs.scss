@@ -1,0 +1,48 @@
+.breadcrumbs-list {
+    padding: 15px 25px 0 100px;
+    margin-bottom: 90px;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        padding-left: 30px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -1000px;
+        right: 0;
+        bottom: -14px;
+        background-color: $secondary;
+    }
+
+    &-item {
+        cursor: pointer;
+
+        &__link {
+            color: #fff;
+            font-size: 18px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid transparent;
+            transition: .5s;
+
+            &:hover {
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+        
+        &::after {
+            content: '/';
+            font-size: 18px;
+            color: #fff;
+            font-family: 'ProximaNova', sans-serif;
+        }
+
+        &:last-of-type {
+            &::after {
+                content: '';
+            }
+        }
+    }
+}

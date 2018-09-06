@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courses</title>
+
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="dist/app.css">
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+        <symbol id="arrow-right-icon" viewBox="0 0 450 450">
+            <path d="M490.786,212.678c-1.718-1.713-3.901-2.568-6.57-2.568H127.907v-63.953c0-3.809-1.812-6.567-5.424-8.28   c-3.621-1.521-6.952-0.949-9.995,1.713L2.853,240.658C0.95,242.564,0,244.848,0,247.511c0,2.474,0.95,4.665,2.853,6.567   l109.636,99.928c3.046,2.474,6.377,2.956,9.995,1.427c3.612-1.52,5.424-4.278,5.424-8.278v-63.953h356.315   c2.663,0,4.854-0.859,6.564-2.567c1.711-1.711,2.566-3.897,2.566-6.563v-54.821C493.356,216.586,492.497,214.393,490.786,212.678z"
+            />
+        </symbol>
+
+        <symbol id="arrow-left-icon" viewBox="0 0 450 450">
+            <path d="M490.498,239.278l-109.632-99.929c-3.046-2.474-6.376-2.95-9.993-1.427c-3.613,1.525-5.427,4.283-5.427,8.282v63.954H9.136   c-2.666,0-4.856,0.855-6.567,2.568C0.859,214.438,0,216.628,0,219.292v54.816c0,2.663,0.855,4.853,2.568,6.563   c1.715,1.712,3.905,2.567,6.567,2.567h356.313v63.953c0,3.812,1.817,6.57,5.428,8.278c3.62,1.529,6.95,0.951,9.996-1.708   l109.632-101.077c1.903-1.902,2.852-4.182,2.852-6.849C493.356,243.367,492.401,241.181,490.498,239.278z"
+            />
+        </symbol>
+
+        <symbol id="phone-icon" viewBox="0 0 512 512">
+            <path d="M368,0H144c-26.4,0-48,21.6-48,48v416c0,26.4,21.6,48,48,48h224c26.4,0,48-21.6,48-48V48C416,21.6,394.4,0,368,0z M192,24 
+                    h128v16H192V24z M256,480c-17.673,0-32-14.327-32-32s14.327-32,32-32s32,14.327,32,32S273.673,480,256,480z M384,384H128V64h256 
+                    V384z" fill="#8f8f8f" />
+        </symbol>
+
+        <symbol id="facebook-icon" viewBox="0 0 448 512">
+            <path fill="#bce3ff" d="M448 80v352c0 26.5-21.5 48-48 48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6 5.4-32.9 33.5-32.9H384V98.7c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9H184v67.6h60.9V480H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"></path>
+        </symbol>
+
+        <symbol id="instagram-icon" viewBox="0 0 448 512">
+            <path fill="#bce3ff" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+        </symbol>
+
+        <symbol id="youtube-icon" viewBox="0 0 448 512">
+            <path fill="#bce3ff" d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"></path>
+        </symbol>
+
+        <symbol id="telegram-icon" viewBox="0 0 496 512">
+            <path fill="#bce3ff" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path>
+        </symbol>
+
+    </svg>
+
+    <!-- New header -->
+    <header id="app-header" class="app-header--secondary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-5 col-sm-auto">
+                    <a href="index.html" class="logo">
+                        <img src="images/icon/logo-icon.png" alt="Brain Academy Logo">
+                    </a>
+                </div>
+                <div class="col-7 col-sm d-flex justify-content-end align-items-center">
+                    <div class="burger-menu--secondary">
+                        <div class="line line--top"></div>
+                        <div class="line line--middle"></div>
+                        <div class="line line--bottom"></div>
+                    </div>
+                    <div class="menu--secondary animated px-2 justify-content-center align-items-center">
+                        <nav class="menu-nav--secondary">
+                            <ul class="menu-nav-list list-unstyled text-center mb-5">
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">главная</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">курсы для школьников</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">пройти тест</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">блог</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">про академию</a>
+                                </li>
+                                <li class="menu-nav-list-item">
+                                    <a href="#" class="menu-nav-list-item__link">контакты</a>
+                                </li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary btn-bg-icon d-block">
+                                <div class="btn-icon"></div>выбрать курс</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Course -->
+        <section id="course-page">
+            <div class="container">
+                <div class="page-banner position-absolute" style="background-image: url('images/bg/courses-page-banner.jpg');"></div>
+                <ul class="breadcrumbs-list list-unstyled d-inline-flex position-relative">
+                    <li class="breadcrumbs-list-item position-relative">
+                        <a href="#" class="breadcrumbs-list-item__link text-uppercase position-relative">главная</a>
+                    </li>
+                    <li class="breadcrumbs-list-item position-relative ml-1">
+                        <a href="#" class="breadcrumbs-list-item__link text-uppercase position-relative">курсы</a>
+                    </li>
+                </ul>
+                <div class="page-description">
+                    <h2 class="page-description__title text-uppercase">Курсы</h2>
+                    <p class="page-description__text">Ми c радостью поможем с выбором наилучшего для Вас IT-направления.</p>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-8 p-1">
+                        <div class="course-page-item course-page-item--big position-relative d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-1.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС JAVA DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 p-1">
+                        <div class="course-page-item position-relative  d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute mb-1" style="background-image: url('images/content/course/course-item-4.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС PHYTON DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                        <div class="course-page-item position-relative  d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-1.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС JAVA DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-1.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС PHP DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-5.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС PYTHON DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-5.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС JAVA DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-4.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС PHYTON DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-4.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--program text-uppercase text-center text-dark position-relative">программирование</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС PHP DEVELOPMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative  d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-2.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--business text-uppercase text-center text-dark position-relative">бизнес</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС PROJECT MANAGEMENT</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative  d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-2.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--business text-uppercase text-center text-dark position-relative">бизнес</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС ONLINE MARKETING</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="course-page-item position-relative  d-flex flex-column justify-content-between">
+                            <div class="bg-hover position-absolute"></div>
+                            <div class="course-page-item__img position-absolute" style="background-image: url('images/content/course/course-item-3.jpg');"></div>
+                            <h4 class="course-page-item__title course-page-item__title--design text-uppercase text-center text-dark position-relative">WEB ДИЗАЙН</h4>
+                            <div class="course-page-item-description  position-absolute">
+                                <div class="course-page-item-description-header d-flex justify-content-between align-items-center">
+                                    <h2 class="course-page-item-description-header__title text-uppercase">КУРС WEB ДИЗАЙН</h2>
+                                    <div class="course-page-item-description-header__price text-uppercase">
+                                        <span class="font-weight-bold">10 200</span> грн</div>
+                                </div>
+                                <div class="course-page-item-description-hover">
+                                    <div class="course-page-item-description-hover-item">группа 14 человек</div>
+                                    <div class="course-page-item-description-hover-item">преподаватель Артем Васильев</div>
+                                    <div class="course-page-item-description-hover-item">40 занятий / 2 раза в неделю</div>
+                                </div>
+                            </div>
+                            <a href="#" class="more-info position-absolute text-uppercase">подробнее</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-1">
+                        <div class="test-item position-relative d-flex justify-content-end align-items-end">
+                            <div class="test-item__img position-absolute" style="background-image: url('images/content/test/test-item-1.jpg');"></div>
+                            <div class="test-item-description">
+                                <h2 class="test-item__title text-uppercase">не знаешь<br> что выбрать?</h2>
+                                <a href="#" class="btn btn-outline-dark">Пройти тест</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="app-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="footer-item">
+                        <a href="#" class="logo mb-5">
+                            <img src="images/icon/logo-icon.png" alt="Brain Academy Logo">
+                        </a>
+                        <div class="footer-item__address text-uppercase mb-4 text-white">ЗАПОРОЖЬЕ, УЛ. ВОЛГОГРАДСКАЯ 26А, ОФ. 213</div>
+                        <ul class="phone-list list-unstyled p-0">
+                            <li class="phone-list-item">
+                                <a href="#">
+                                    <svg width="15" height="20" class="mr-3">
+                                        <use xlink:href="#phone-icon"></use>
+                                    </svg>
+                                    <a href="#" class="phone-list-item__link">(099) 200-3373</a>
+                            </li>
+                            <li class="phone-list-item">
+                                <svg width="15" height="20" class="mr-3">
+                                    <use xlink:href="#phone-icon"></use>
+                                </svg>
+                                <a href="#" class="phone-list-item__link">(099) 200-3373</a>
+                            </li>
+                        </ul>
+
+                        <ul class="social-list list-unstyled d-flex mb-4">
+                            <li class="social-list-item mr-3">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#facebook-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-list-item mr-3">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#instagram-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-list-item mr-3">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#youtube-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-list-item">
+                                <a href="#">
+                                    <svg width="25" height="25">
+                                        <use xlink:href="#telegram-icon"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="footer-item-copyr">
+                            Дизайн и разработка
+                            <span class="font-weight-bold">Impression Bureau</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <a href="#" class="footer-img position-absolute" style="background-image: url('images/content/footer/footer-item.jpg');"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="dist/app.js"></script>
+
+</body>
+
+</html>

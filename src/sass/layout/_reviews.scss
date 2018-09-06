@@ -1,0 +1,55 @@
+#reviews {
+    padding: 70px 0 120px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 120px;
+        width: 100px;
+        height: 100px;
+        background-color: #cccccc;
+        overflow: hidden;
+
+        @media (max-width: map_get($grid-breakpoints, sm)) {
+            display: none;
+        }        
+    }
+}
+
+.reviews-slider {
+
+    .flickity-page-dots {
+        bottom: -50px;
+
+        li {
+            background: $primary;
+        }
+    }
+
+    &-item {
+        padding: 0 15px;
+        width: 100%;
+
+        @media (min-width: map_get($grid-breakpoints, sm)) {
+            width: 50%;
+        }
+
+        @media (min-width: map_get($grid-breakpoints, lg)) {
+            width: 33.333333%;
+        }
+
+        &-img {
+            padding-top: 320px;
+            @extend %img;
+        }
+
+        &-content {
+
+            &__title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+}

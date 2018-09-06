@@ -1,0 +1,106 @@
+#header-banner {
+    padding-left: 120px;
+    height: 100vh;
+    max-height: 1000px;
+    background: url('../images/bg/header-bg.jpg') 50% 50% / cover no-repeat;
+
+    .decoration {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        background: rgba(#55d9ea, .6);
+        animation: preloader 2s linear forwards;
+
+        @media (max-width: map_get($grid-breakpoints, md)) {
+            display: none;
+        }
+
+        @keyframes preloader {
+            0%{
+                right: 100%;
+            }
+            25%{
+                right: 50%;
+            }
+            50% {
+                right: 0;
+            }
+            75% {
+                right: 50%;
+            }
+            100%{
+                right: 97%;
+            }
+        }
+    }
+    
+    .scroll-down {
+        height: 110px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        &__line {
+            width: 2px;
+            height: 110px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            background-position: 0 -110px;
+            background-size: 100% 200%;
+            animation: scrollDown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+        }
+
+        &__text {
+            font-family: 'ProximaNova', sans-serif;
+            font-size: 18px;
+        }
+    }
+
+    @keyframes scrollDown {
+        0%{
+            background-position: 0 -110px;
+        }
+        75% {
+            background-position: 0 0;
+        }
+        100%{
+            background-position: 0 110px;
+        }
+    }
+}
+
+.header-banner-item  {
+    padding-left: 300px;
+    z-index: 99;
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+        padding-left: 0;
+    }
+
+    &__bg-title {
+        left: 0;
+        bottom: 0;
+        font-family: 'ProximaNova-Bold', sans-serif;
+        font-size: 250px;
+        opacity: .15;
+        line-height: .7;
+        user-select: none;
+    }
+
+    &-title {
+
+       h1 {
+            font-family: 'ProximaNova-Bold', sans-serif;
+            line-height: .9;
+
+            @media (max-width: map_get($grid-breakpoints, sm)) {
+                font-size: 50px;
+            }
+       }
+
+       h3 {
+           letter-spacing: 2px;
+       }
+    }
+}

@@ -1,0 +1,36 @@
+.more-info {
+    right: 0;
+    bottom: 0;
+    padding: 20px 65px;
+    font-size: 18px;
+    line-height: 1;
+    background-color: #fff;
+    border: none;
+    transition: all 0.7s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 0px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.4s ease;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 0px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.4s ease;
+        top: inherit;
+        left: inherit;
+        bottom: 0;
+        right: 0;
+    }
+}

@@ -1,0 +1,68 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 1;
+    z-index: 4;
+
+    &.btn-outline-dark {
+
+        &:hover {
+            background-color: transparent;
+            color: #fff;
+
+            &::before {
+                right: 0;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            background-color: $dark;
+            transition: .5s;
+            z-index: -2;
+        }
+    }
+}
+
+.btn-bg-icon {
+    padding-left: 110px;
+    border-color: #fff !important;
+    color: #fff;
+
+     &:hover {
+
+         .btn-icon {
+            width: 100%;
+        }
+    }
+    
+    .btn-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 65px;
+        bottom: 0;
+        background-color: #fff;
+        transition: .5s;
+
+         &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 35px;
+            height: 35px;
+            background: url('../images/icon/brain-icon.png') 0 0 / contain no-repeat;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+#app-footer {
+    padding: 70px 0 60px;
+    background: url('../images/bg/footer-bg.jpg') 50% 50% / cover no-repeat;
+
+    .footer-img {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @extend %img;
+    }
+}
+
+.footer-item {
+
+    .logo {
+        display: inline-block;
+        width: 144px;
+        height: 52px;
+    }
+
+    .social-list {
+        margin-top: 140px;
+
+        svg {
+            opacity: .7;
+            transition: .5s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-copyr {
+        font-size: 14px;
+        color: #b1bbd6;
+    }
+}
+
+.phone-list-item {
+
+    &__link {
+        font-family: 'GothamPro', Arial, Helvetica, sans-serif;
+        color: #bfe8ff;
+        border-bottom: 1px solid transparent;
+        transition: .5s;
+
+        &:hover {
+            border-color: #bfe8ff;
+        }
+    }
+}
